@@ -1,12 +1,19 @@
 name: learn-github-actions
 on: [push]
 jobs:
-  check-bats-version:
+  write-and-upload:
+    name: Create and upload artifacts
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+      - name: Create build artifacts
+        run: .github/scripts/create.sh
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3.0.0
+        with:
+          name: artifacts
+          path: .github/artifacts
+          if-no-files-found: error
