@@ -10,7 +10,9 @@ jobs:
         with:
           node-version: '14'
       - name: Create build artifacts
-        run: .github/scripts/create.sh
+        run: |
+          chmod +x .github/scripts/create.sh
+          .github/scripts/create.sh
       - name: Upload build artifacts
         uses: actions/upload-artifact@v3.0.0
         with:
