@@ -2,11 +2,16 @@ set -e
 
 npm install
 
+mkdir -p artifacts
+expr 1 + 1 > artifacts/output.log
+cp -r bin/* artifacts
+
+cd artifacts
 mkdir -p ~/artifacts
-expr 1 + 1 > ~/artifacts/output.log
-cp -r bin/* ~/artifacts
+zip ~/artifacts/artifacts.zip *
 # node_modules/pkg/lib-es5/bin.js -t latest-macos-x64 index.js --targets=win -o=artifacts/papercutca
 # cp -r artifacts/* ~/artifacts
-# rm -rf artifacts
+cd ..
+rm -rf artifacts
 
 set +e
