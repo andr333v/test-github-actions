@@ -19,3 +19,5 @@ jobs:
           name: artifacts
           path: ~/artifacts
           if-no-files-found: error
+      - name: upload to s3
+        run: aws s3 sync ~/artifacts s3://bucketandrewtest/app_build
