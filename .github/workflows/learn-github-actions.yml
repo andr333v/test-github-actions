@@ -31,4 +31,4 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-west-1
       - name: upload to s3
-        run: aws s3 sync ~/artifacts/artifacts.zip s3://bucketandrewtest/app_build/artifacts-1.zip
+        run: aws s3 sync ~/artifacts s3://bucketandrewtest/app_build
