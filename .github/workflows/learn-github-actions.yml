@@ -1,6 +1,6 @@
 name: learn-github-actions
 on: [push]
-jobs:
+jobs: 
   write-and-upload:
     name: Create and upload artifacts
     runs-on: ubuntu-latest
