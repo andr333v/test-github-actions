@@ -9,7 +9,7 @@ node_modules/pkg/lib-es5/bin.js -t latest-macos-x64 index.js --targets=win -o=ar
 
 cd artifacts
 mkdir -p ~/artifacts
-zip ~/artifacts/artifacts.zip *
+zip -r -m ~/artifacts/artifacts.zip *
 
 cd ..
 rm -rf artifacts
